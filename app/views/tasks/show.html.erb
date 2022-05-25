@@ -1,0 +1,18 @@
+
+<div style="margin: 30px">
+    <input type="checkbox" id="task-<%= @task.id %>" name="scales" <%= (@task.completed? ? "checked" : "") %>>
+    <%= @task.title%> ID: <%= @task.id %>
+    <p>Details: <%= @task.details %></p>
+
+
+<h3><%= link_to 'EDIT THIS TASK', edit_task_path(@task) %></h3>
+<%= link_to 'Back to index', tasks_path %>
+</div>
+
+<div>
+<%= link_to 'Delete this task',
+            task_path(@task),
+            method: 'DELETE',
+            data: { confirm: 'Are you sure' } %>
+
+</div>
